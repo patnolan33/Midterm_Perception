@@ -1,7 +1,7 @@
 
 #include <iostream>
 #include <vector>
-#include <tuple>
+#include <string>
 
 #include <cv.h>
 
@@ -11,12 +11,15 @@ public:
 
 	ObjectDetection();
 
-	std::vector<std::tuple<double, double> > getBoundaryPixels();
+	std::vector<cv::Point> getBoundaryPixels();
 
-	bool detectObjectBoundary(cv::Mat image);
+	bool detectObjectBoundary(const std::string filename, bool displayImage);
 
 
 private:
-	std::vector<std::tuple<double, double> > boundaryPixels;
+
+	void drawBoundary(std::vector<cv::Point> boundary, cv::Mat cannyImg, std::vector<cv::Vec4i> hierarchy);
+
+	std::vector<cv::Point> boundaryPixels;
 
 };

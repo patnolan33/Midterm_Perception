@@ -15,9 +15,13 @@ add_executable(
 
 include_directories(
     ${CMAKE_SOURCE_DIR}/include
-    ${OpenCV_INCLUDE_DIRS}
 )
 
-target_include_directories(cpp-test PUBLIC ../vendor/googletest/googletest/include)
+
 find_package( OpenCV REQUIRED COMPONENTS core imgproc highgui )
+
+target_include_directories(
+	cpp-test PUBLIC ../vendor/googletest/googletest/include 
+    ${OpenCV_INCLUDE_DIRS}
+    )
 target_link_libraries(cpp-test PUBLIC gtest ${OpenCV_LIBS})
