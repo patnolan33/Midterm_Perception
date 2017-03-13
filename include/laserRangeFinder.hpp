@@ -1,15 +1,14 @@
 
-#include <iostream>
-
-
 class LaserRangeFinder {
 public:
 
 	LaserRangeFinder(double maxDetectionDistance);
 
-	bool takeDistanceReading();
+	void takeDistanceReading();
 
 	double getDistance();
+
+	double getMaxDetectionDistance();
 
 
 private:

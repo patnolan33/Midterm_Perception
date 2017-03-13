@@ -1,14 +1,30 @@
 #include <laserRangeFinder.hpp>
 
-LaserRangeFinder::LaserRangeFinder(double maxDetectionDistance)
-: maxDetectionDistance(maxDetectionDistance) {
+#include <iostream>
+#include <time.h>
 
+LaserRangeFinder::LaserRangeFinder(double maxDetectionDistance)
+: maxDetectionDistance(maxDetectionDistance),
+  currentReading(maxDetectionDistance*10){
 }
 
-bool LaserRangeFinder::takeDistanceReading() {
-	return true;
+void LaserRangeFinder::takeDistanceReading() {
+
+	srand((unsigned)time(NULL));
+	double noise = ((double) rand() / (RAND_MAX));
+
+	if(noise > 0.1 && noise < 0.9) {
+		currentReading = 4.5 + noise;
+	}
+	else {
+		currentReading = maxDetectionDistance*10;
+	}
 }
 
 double LaserRangeFinder::getDistance() {
-	return 5;
+	return currentReading;
+}
+
+double LaserRangeFinder::getMaxDetectionDistance() {
+	return maxDetectionDistance;
 }
