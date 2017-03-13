@@ -1,5 +1,5 @@
 #include <iostream>
-#include <objectDetection.hpp>
+#include <camera.hpp>
 #include <memory>
 
 #include <opencv2/imgproc/imgproc.hpp>
@@ -8,9 +8,13 @@
 
 int main()
 {
-	std::shared_ptr<ObjectDetection> detector = std::make_shared<ObjectDetection>();
+//	std::shared_ptr<ObjectDetection> detector = std::make_shared<ObjectDetection>();
+//
+//	detector->detectObjectBoundary("../blackBorder.jpg", true);
 
-	detector->detectObjectBoundary("../blackBorder.jpg", true);
+	std::shared_ptr<Camera> camera = std::make_shared<Camera>();
+
+	camera->takeImage();
 
     return 0;
 }

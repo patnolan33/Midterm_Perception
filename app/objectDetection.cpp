@@ -42,7 +42,7 @@ bool ObjectDetection::detectObjectBoundary(const std::string filename, bool disp
 		std::cout << "Boundary pixels for the first contour: " << boundaryPixels.size() << std::endl;
 
 		if(displayImage) {
-			drawBoundary(boundaryPixels, srcImg, hierarchy);
+			drawBoundary(boundaryPixels, srcImg);
 		}
 
 		return true;
@@ -52,7 +52,7 @@ bool ObjectDetection::detectObjectBoundary(const std::string filename, bool disp
 	}
 }
 
-void ObjectDetection::drawBoundary(std::vector<cv::Point> boundary, cv::Mat srcImg, std::vector<cv::Vec4i> hierarchy) {
+void ObjectDetection::drawBoundary(std::vector<cv::Point> boundary, cv::Mat srcImg) {
 
 	cv::RNG rng(12345);
 	const cv::Point *pts = (const cv::Point*) cv::Mat(boundary).data;

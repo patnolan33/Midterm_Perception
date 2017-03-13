@@ -18,7 +18,7 @@ public:
 
 private:
 
-	void drawBoundary(std::vector<cv::Point> boundary, cv::Mat cannyImg, std::vector<cv::Vec4i> hierarchy);
+	void drawBoundary(std::vector<cv::Point> boundary, cv::Mat cannyImg);
 
 	std::vector<cv::Point> boundaryPixels;
 

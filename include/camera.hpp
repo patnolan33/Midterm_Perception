@@ -3,8 +3,13 @@
 #include <string>
 #include <vector>
 #include <tuple>
+#include <memory>
 
 #include <objectDetection.hpp>
+
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
 
 
 class Camera {
@@ -14,14 +19,14 @@ public:
 
 	bool takeImage();
 
-	std::vector<std::tuple<double, double> > getBoundary();
+	std::vector<cv::Point> getBoundary();
 
 
 private:
-//	cv::VideoCapture videoCapture;
+	cv::VideoCapture videoCapture;
 
-	cv::Mat currentImage;
+	std::string currentImage;
 
-	ObjectDetection boundaryDetection;
+	std::shared_ptr<ObjectDetection> boundaryDetection;
 
 };
