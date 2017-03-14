@@ -1,0 +1,99 @@
+\hypertarget{classVisionSystem}{\section{Vision\-System Class Reference}
+\label{classVisionSystem}\index{Vision\-System@{Vision\-System}}
+}
+
+
+\hyperlink{classVisionSystem}{Vision\-System} class determines suggested vehicle actions based on images and depth measurements.  
+
+
+
+
+{\ttfamily \#include $<$vision\-System.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVisionSystem_a1d725448b142da1105419b186abcdaf0}{Vision\-System} (double max\-Detection\-Distance, double vehicle\-Cross\-Section)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classVisionSystem}{Vision\-System} constructor. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classVisionSystem_ade324cc25762e22038d98f8cb76f0df3}{determine\-Control\-Action} ()
+\begin{DoxyCompactList}\small\item\em Determine the control action based on images and depth measurements. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classVisionSystem_af3ba2c91f91ba7f4646f90a78a9b5fbf}{get\-Suggested\-Action} ()
+\begin{DoxyCompactList}\small\item\em Get the current suggested action. \end{DoxyCompactList}\item 
+double \hyperlink{classVisionSystem_ae56f2ece1522170f4e24cd3974bfd3ba}{get\-Vehicle\-Cross\-Section} ()
+\begin{DoxyCompactList}\small\item\em Get the vehicle cross section. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classVisionSystem}{Vision\-System} class determines suggested vehicle actions based on images and depth measurements. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classVisionSystem_a1d725448b142da1105419b186abcdaf0}{\index{Vision\-System@{Vision\-System}!Vision\-System@{Vision\-System}}
+\index{Vision\-System@{Vision\-System}!VisionSystem@{Vision\-System}}
+\subsubsection[{Vision\-System}]{\setlength{\rightskip}{0pt plus 5cm}Vision\-System\-::\-Vision\-System (
+\begin{DoxyParamCaption}
+\item[{double}]{max\-Detection\-Distance, }
+\item[{double}]{vehicle\-Cross\-Section}
+\end{DoxyParamCaption}
+)}}\label{classVisionSystem_a1d725448b142da1105419b186abcdaf0}
+
+
+\hyperlink{classVisionSystem}{Vision\-System} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\-Detection\-Distance} & Maximum detection distance of the onboard lasers \\
+\hline
+{\em vehicle\-Cross\-Section} & Vehicle forward cross section to determine if it can fit into any empty spaces found \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classVisionSystem_ade324cc25762e22038d98f8cb76f0df3}{\index{Vision\-System@{Vision\-System}!determine\-Control\-Action@{determine\-Control\-Action}}
+\index{determine\-Control\-Action@{determine\-Control\-Action}!VisionSystem@{Vision\-System}}
+\subsubsection[{determine\-Control\-Action}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Vision\-System\-::determine\-Control\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVisionSystem_ade324cc25762e22038d98f8cb76f0df3}
+
+
+Determine the control action based on images and depth measurements. 
+
+\begin{DoxyReturn}{Returns}
+string denoting the suggested action (i.\-e. turn right/left 45 degrees, continue straight, no action) 
+\end{DoxyReturn}
+\hypertarget{classVisionSystem_af3ba2c91f91ba7f4646f90a78a9b5fbf}{\index{Vision\-System@{Vision\-System}!get\-Suggested\-Action@{get\-Suggested\-Action}}
+\index{get\-Suggested\-Action@{get\-Suggested\-Action}!VisionSystem@{Vision\-System}}
+\subsubsection[{get\-Suggested\-Action}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Vision\-System\-::get\-Suggested\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVisionSystem_af3ba2c91f91ba7f4646f90a78a9b5fbf}
+
+
+Get the current suggested action. 
+
+\begin{DoxyReturn}{Returns}
+string denoting the suggested action (i.\-e. turn right/left 45 degrees, continue straight, no action) 
+\end{DoxyReturn}
+\hypertarget{classVisionSystem_ae56f2ece1522170f4e24cd3974bfd3ba}{\index{Vision\-System@{Vision\-System}!get\-Vehicle\-Cross\-Section@{get\-Vehicle\-Cross\-Section}}
+\index{get\-Vehicle\-Cross\-Section@{get\-Vehicle\-Cross\-Section}!VisionSystem@{Vision\-System}}
+\subsubsection[{get\-Vehicle\-Cross\-Section}]{\setlength{\rightskip}{0pt plus 5cm}double Vision\-System\-::get\-Vehicle\-Cross\-Section (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVisionSystem_ae56f2ece1522170f4e24cd3974bfd3ba}
+
+
+Get the vehicle cross section. 
+
+\begin{DoxyReturn}{Returns}
+vehicle forward cross section 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/viki/\-Documents/\-E\-N\-P\-M808\-X/\-Midterm/\-Midterm\-\_\-\-Perception/include/\hyperlink{visionSystem_8hpp}{vision\-System.\-hpp}\item 
+/home/viki/\-Documents/\-E\-N\-P\-M808\-X/\-Midterm/\-Midterm\-\_\-\-Perception/app/\hyperlink{visionSystem_8cpp}{vision\-System.\-cpp}\end{DoxyCompactItemize}

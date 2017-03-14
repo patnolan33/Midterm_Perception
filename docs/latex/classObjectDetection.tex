@@ -1,0 +1,99 @@
+\hypertarget{classObjectDetection}{\section{Object\-Detection Class Reference}
+\label{classObjectDetection}\index{Object\-Detection@{Object\-Detection}}
+}
+
+
+\hyperlink{classObjectDetection}{Object\-Detection} class handles determining object boundary and area.  
+
+
+
+
+{\ttfamily \#include $<$object\-Detection.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classObjectDetection_a6ccb25952ecc45811451c5cb623e23ee}{Object\-Detection} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classObjectDetection}{Object\-Detection} constructor. \end{DoxyCompactList}\item 
+std\-::vector$<$ cv\-::\-Point $>$ \hyperlink{classObjectDetection_acc15129e94b7dcb535a56508f421540b}{get\-Boundary\-Pixels} ()
+\begin{DoxyCompactList}\small\item\em Get the vector of pixel locations of the detected boundary. \end{DoxyCompactList}\item 
+double \hyperlink{classObjectDetection_a6fd1c62e8a95d0eab4dee4787952519d}{get\-Object\-Area} ()
+\begin{DoxyCompactList}\small\item\em Get the area of the detected object. \end{DoxyCompactList}\item 
+bool \hyperlink{classObjectDetection_a172f8a9b04616ae0c5ac962fc1bfec66}{detect\-Object\-Boundary} (const std\-::string \&filename, bool display\-Image)
+\begin{DoxyCompactList}\small\item\em Detect the object boundary assuming a fixation point at the center of the image given by filename. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classObjectDetection}{Object\-Detection} class handles determining object boundary and area. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classObjectDetection_a6ccb25952ecc45811451c5cb623e23ee}{\index{Object\-Detection@{Object\-Detection}!Object\-Detection@{Object\-Detection}}
+\index{Object\-Detection@{Object\-Detection}!ObjectDetection@{Object\-Detection}}
+\subsubsection[{Object\-Detection}]{\setlength{\rightskip}{0pt plus 5cm}Object\-Detection\-::\-Object\-Detection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classObjectDetection_a6ccb25952ecc45811451c5cb623e23ee}
+
+
+\hyperlink{classObjectDetection}{Object\-Detection} constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classObjectDetection_a172f8a9b04616ae0c5ac962fc1bfec66}{\index{Object\-Detection@{Object\-Detection}!detect\-Object\-Boundary@{detect\-Object\-Boundary}}
+\index{detect\-Object\-Boundary@{detect\-Object\-Boundary}!ObjectDetection@{Object\-Detection}}
+\subsubsection[{detect\-Object\-Boundary}]{\setlength{\rightskip}{0pt plus 5cm}bool Object\-Detection\-::detect\-Object\-Boundary (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{filename, }
+\item[{bool}]{display\-Image}
+\end{DoxyParamCaption}
+)}}\label{classObjectDetection_a172f8a9b04616ae0c5ac962fc1bfec66}
+
+
+Detect the object boundary assuming a fixation point at the center of the image given by filename. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Image filename to read in and process \\
+\hline
+{\em display\-Image} & True if you wish to display the processed image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+success or failure (true or false) 
+\end{DoxyReturn}
+\hypertarget{classObjectDetection_acc15129e94b7dcb535a56508f421540b}{\index{Object\-Detection@{Object\-Detection}!get\-Boundary\-Pixels@{get\-Boundary\-Pixels}}
+\index{get\-Boundary\-Pixels@{get\-Boundary\-Pixels}!ObjectDetection@{Object\-Detection}}
+\subsubsection[{get\-Boundary\-Pixels}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ cv\-::\-Point $>$ Object\-Detection\-::get\-Boundary\-Pixels (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classObjectDetection_acc15129e94b7dcb535a56508f421540b}
+
+
+Get the vector of pixel locations of the detected boundary. 
+
+\begin{DoxyReturn}{Returns}
+vector of pixel locations 
+\end{DoxyReturn}
+\hypertarget{classObjectDetection_a6fd1c62e8a95d0eab4dee4787952519d}{\index{Object\-Detection@{Object\-Detection}!get\-Object\-Area@{get\-Object\-Area}}
+\index{get\-Object\-Area@{get\-Object\-Area}!ObjectDetection@{Object\-Detection}}
+\subsubsection[{get\-Object\-Area}]{\setlength{\rightskip}{0pt plus 5cm}double Object\-Detection\-::get\-Object\-Area (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classObjectDetection_a6fd1c62e8a95d0eab4dee4787952519d}
+
+
+Get the area of the detected object. 
+
+\begin{DoxyReturn}{Returns}
+object area 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/viki/\-Documents/\-E\-N\-P\-M808\-X/\-Midterm/\-Midterm\-\_\-\-Perception/include/\hyperlink{objectDetection_8hpp}{object\-Detection.\-hpp}\item 
+/home/viki/\-Documents/\-E\-N\-P\-M808\-X/\-Midterm/\-Midterm\-\_\-\-Perception/app/\hyperlink{objectDetection_8cpp}{object\-Detection.\-cpp}\end{DoxyCompactItemize}

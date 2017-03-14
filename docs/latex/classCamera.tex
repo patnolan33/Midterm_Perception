@@ -1,0 +1,91 @@
+\hypertarget{classCamera}{\section{Camera Class Reference}
+\label{classCamera}\index{Camera@{Camera}}
+}
+
+
+\hyperlink{classCamera}{Camera} class handles taking an image and performing image processing to determine any object boundary and area.  
+
+
+
+
+{\ttfamily \#include $<$camera.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCamera_a01f94c3543f56ede7af49dc778f19331}{Camera} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCamera}{Camera} constructor. \end{DoxyCompactList}\item 
+bool \hyperlink{classCamera_a63a7881aca6e8ad390b4317aa722db20}{take\-Image} ()
+\begin{DoxyCompactList}\small\item\em Take an image and perform object detection processing. \end{DoxyCompactList}\item 
+std\-::vector$<$ cv\-::\-Point $>$ \hyperlink{classCamera_a8e82c4a9785070177c4cbbffffa3bd99}{get\-Boundary} ()
+\begin{DoxyCompactList}\small\item\em Get the current detected boundary. \end{DoxyCompactList}\item 
+double \hyperlink{classCamera_a283301a4e9901811410348b3c8133c49}{get\-Object\-Area} ()
+\begin{DoxyCompactList}\small\item\em Get the current detected object area. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classCamera}{Camera} class handles taking an image and performing image processing to determine any object boundary and area. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCamera_a01f94c3543f56ede7af49dc778f19331}{\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\subsubsection[{Camera}]{\setlength{\rightskip}{0pt plus 5cm}Camera\-::\-Camera (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCamera_a01f94c3543f56ede7af49dc778f19331}
+
+
+\hyperlink{classCamera}{Camera} constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCamera_a8e82c4a9785070177c4cbbffffa3bd99}{\index{Camera@{Camera}!get\-Boundary@{get\-Boundary}}
+\index{get\-Boundary@{get\-Boundary}!Camera@{Camera}}
+\subsubsection[{get\-Boundary}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ cv\-::\-Point $>$ Camera\-::get\-Boundary (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCamera_a8e82c4a9785070177c4cbbffffa3bd99}
+
+
+Get the current detected boundary. 
+
+\begin{DoxyReturn}{Returns}
+vector of pixel locations denoting the object boundary 
+\end{DoxyReturn}
+\hypertarget{classCamera_a283301a4e9901811410348b3c8133c49}{\index{Camera@{Camera}!get\-Object\-Area@{get\-Object\-Area}}
+\index{get\-Object\-Area@{get\-Object\-Area}!Camera@{Camera}}
+\subsubsection[{get\-Object\-Area}]{\setlength{\rightskip}{0pt plus 5cm}double Camera\-::get\-Object\-Area (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCamera_a283301a4e9901811410348b3c8133c49}
+
+
+Get the current detected object area. 
+
+\begin{DoxyReturn}{Returns}
+object area 
+\end{DoxyReturn}
+\hypertarget{classCamera_a63a7881aca6e8ad390b4317aa722db20}{\index{Camera@{Camera}!take\-Image@{take\-Image}}
+\index{take\-Image@{take\-Image}!Camera@{Camera}}
+\subsubsection[{take\-Image}]{\setlength{\rightskip}{0pt plus 5cm}bool Camera\-::take\-Image (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCamera_a63a7881aca6e8ad390b4317aa722db20}
+
+
+Take an image and perform object detection processing. 
+
+\begin{DoxyReturn}{Returns}
+success or failure (true or false) 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/viki/\-Documents/\-E\-N\-P\-M808\-X/\-Midterm/\-Midterm\-\_\-\-Perception/include/\hyperlink{camera_8hpp}{camera.\-hpp}\item 
+/home/viki/\-Documents/\-E\-N\-P\-M808\-X/\-Midterm/\-Midterm\-\_\-\-Perception/app/\hyperlink{camera_8cpp}{camera.\-cpp}\end{DoxyCompactItemize}
