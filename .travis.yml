@@ -22,13 +22,8 @@ matrix:
 
 before_install:
   - pip install --user cpp-coveralls
-  - git submodule update --init --recursive
-  - sudo add-apt-repository -y ppa:kubuntu-ppa/backports 
-  - sudo sed -i 's/us-central1.gce/us-central1.gce.clouds/' /etc/apt/sources.list && sudo apt-get update
-
-install:
-  - sudo apt-get install libcv-dev libcvaux-dev libhighgui-dev libopencv-dev
-  - echo "OpenCV installed."
+  - sudo apt-get update -qq
+  - sudo apt-get install -y libopencv-dev
 
 script:
   - export CXX=$COMPILER;
