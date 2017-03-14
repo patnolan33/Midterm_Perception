@@ -1,20 +1,22 @@
 /**
-* @file camera.cpp
-* @brief Camera Class implementation
-* @details Implementation of the Camera class to take an image and detect any objects within the image.
-* @author Patrick Nolan (patnolan33)
-* @copyright MIT License.
-*/
+ * @file camera.cpp
+ * @brief Camera Class implementation
+ * @details Implementation of the Camera class to take an image and detect any objects within the image.
+ * @author Patrick Nolan (patnolan33)
+ * @copyright MIT License.
+ */
 
 #include <camera.hpp>
 
 #include <iostream>
+#include <vector>
+#include <memory>
 
 /**
  * @brief Camera constructor
  */
-Camera::Camera() {
-	boundaryDetection = std::make_shared<ObjectDetection>();
+Camera::Camera() :
+        boundaryDetection(std::make_shared<ObjectDetection>()) {
 }
 
 /**
@@ -22,34 +24,33 @@ Camera::Camera() {
  * @return success or failure (true or false)
  */
 bool Camera::takeImage() {
-	// Capture image from webcam:
-	videoCapture = cv::VideoCapture(0);
+    // Capture image from webcam:
+    videoCapture = cv::VideoCapture(0);
 
-	// Get the image frame:
-	cv::Mat img;
-	videoCapture >> img;
+    // Get the image frame:
+    cv::Mat img;
+    videoCapture >> img;
 
-	if(img.empty()) {
-		std::cout << "There is something wrong with the webcam, using default test image blackBorder.jpg..." << std::endl;
-		currentImage = "../blackBorder.jpg";
+    if (img.empty()) {
+        std::cout
+                << "Something went wrong. Using blackBorder.jpg..."
+                << std::endl;
+        currentImage = "../blackBorder.jpg";
 
-		boundaryDetection->detectObjectBoundary(currentImage, false);
-	}
-	else {
-		cv::imwrite("webcamImage.jpg", img);
-		currentImage = "webcamImage.jpg";
+        boundaryDetection->detectObjectBoundary(currentImage, false);
+    } else {
+        cv::imwrite("webcamImage.jpg", img);
+        currentImage = "webcamImage.jpg";
 
-		boundaryDetection->detectObjectBoundary(currentImage, false);
-	}
+        boundaryDetection->detectObjectBoundary(currentImage, false);
+    }
 
-
-	// Only return true if our boundary has been found
-	if(getBoundary().size() > 0) {
-		return true;
-	}
-	else {
-		return false;
-	}
+    // Only return true if our boundary has been found
+    if (getBoundary().size() > 0) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 /**
@@ -57,7 +58,7 @@ bool Camera::takeImage() {
  * @return vector of pixel locations denoting the object boundary
  */
 std::vector<cv::Point> Camera::getBoundary() {
-	return boundaryDetection->getBoundaryPixels();
+    return boundaryDetection->getBoundaryPixels();
 }
 
 /**
@@ -65,5 +66,5 @@ std::vector<cv::Point> Camera::getBoundary() {
  * @return object area
  */
 double Camera::getObjectArea() {
-	return boundaryDetection->getObjectArea();
+    return boundaryDetection->getObjectArea();
 }

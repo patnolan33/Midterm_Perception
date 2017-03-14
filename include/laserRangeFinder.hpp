@@ -10,41 +10,39 @@
  * @brief LaserRangeFinder class handles taking depth measurements via single point lasers
  */
 class LaserRangeFinder {
-public:
-
+ public:
 	/**
 	 * @brief LaserRangeFinder constructor
 	 * @param maxDetectionDistance The cutoff distance where we lose confidence in a measurement
 	 */
-	LaserRangeFinder(double maxDetectionDistance);
+    explicit LaserRangeFinder(double maxDetectionDistance);
 
 	/**
 	 * @brief Take a distance measurement
 	 */
-	void takeDistanceReading();
+    void takeDistanceReading();
 
 	/**
 	 * @brief Get the current distance measurement
 	 * @return measured distance
 	 */
-	double getDistance();
+    double getDistance();
 
 	/**
 	 * @brief Get the maximum detection distance value
 	 * @return maximum detection distance
 	 */
-	double getMaxDetectionDistance();
+    double getMaxDetectionDistance();
 
 
-private:
+ private:
 	/**
 	 * @brief Maximum detection distance
 	 */
-	double maxDetectionDistance;
+    double maxDetectionDistance;
 
 	/**
 	 * @brief Current distance measurement
 	 */
-	double currentReading;
-
+    double currentReading;
 };
