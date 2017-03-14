@@ -1,3 +1,11 @@
+/**
+* @file main.cpp
+* @brief Program main
+* @details This file is used to implement the VisionSystem class and determine suggested actions until a user terminates vehicle motion.
+* @author Patrick Nolan (patnolan33)
+* @copyright MIT License.
+*/
+
 #include <iostream>
 #include <visionSystem.hpp>
 #include <memory>

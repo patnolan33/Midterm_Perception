@@ -1,3 +1,11 @@
+/**
+* @file main.cpp
+* @brief Unit tests
+* @details This file is used to run all unit tests for the Perception module
+* @author Patrick Nolan (patnolan33)
+* @copyright MIT License.
+*/
+
 #include <gtest/gtest.h>
 
 int main( int argc , char** argv )

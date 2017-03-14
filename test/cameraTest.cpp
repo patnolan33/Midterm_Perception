@@ -1,3 +1,10 @@
+/**
+* @file cameraTest.cpp
+* @brief Unit tests
+* @details This file is used to run all unit tests for the Camera class
+* @author Patrick Nolan (patnolan33)
+* @copyright MIT License.
+*/
 
 #include <camera.hpp>
 #include <gtest/gtest.h>
@@ -5,12 +12,17 @@
 #include <vector>
 #include <tuple>
 
-
+/**
+ * @brief Test the camera's ability to take an image (or use the default image if the webcam has issues)
+ */
 TEST(CameraTest, take_image) {
 	std::shared_ptr<Camera> camera = std::make_shared<Camera>();
 	EXPECT_TRUE(camera->takeImage());
 }
 
+/**
+ * @brief Test the ability for the camera to grab the boundary from its object detector algorithm
+ */
 TEST(CameraTest, get_boundary) {
 
 	std::shared_ptr<Camera> camera = std::make_shared<Camera>();
@@ -21,7 +33,9 @@ TEST(CameraTest, get_boundary) {
 	EXPECT_EQ(10, boundaryPts.size());
 }
 
-
+/**
+ * @brief Test the ability for the camera to grab the detected object area for subsequent decision making
+ */
 TEST(CameraTest, get_area) {
 
 	std::shared_ptr<Camera> camera = std::make_shared<Camera>();

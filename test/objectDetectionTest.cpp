@@ -1,3 +1,11 @@
+/**
+* @file objectDetectionTest.cpp
+* @brief Unit tests
+* @details This file is used to run all unit tests for the ObjectDetection class
+* @author Patrick Nolan (patnolan33)
+* @copyright MIT License.
+*/
+
 #include <objectDetection.hpp>
 #include <gtest/gtest.h>
 #include <memory>
@@ -8,6 +16,9 @@
 
 const std::string filename = "../blackBorder.jpg";
 
+/**
+ * @breif Test the object detector's ability to grab the current detected boundary
+ */
 TEST(ObjectDetectionTest, get_boundary) {
 	std::shared_ptr<ObjectDetection> objectDetection = std::make_shared<ObjectDetection>();
 	objectDetection->detectObjectBoundary(filename, false);
@@ -18,6 +29,9 @@ TEST(ObjectDetectionTest, get_boundary) {
 	EXPECT_EQ(10, boundaryPts.size());
 }
 
+/**
+ * @brief Test the object detector's ability to set and grab the current detected object area
+ */
 TEST(ObjectDetectionTest, get_area) {
 	std::shared_ptr<ObjectDetection> objectDetection = std::make_shared<ObjectDetection>();
 	objectDetection->detectObjectBoundary(filename, false);
@@ -26,6 +40,9 @@ TEST(ObjectDetectionTest, get_area) {
 	EXPECT_NEAR(176042, objectDetection->getObjectArea(), 1);
 }
 
+/**
+ * @brief Test the object detector's ability to detect an object boundary
+ */
 TEST(ObjectDetectionTest, detect_boundary) {
 	std::shared_ptr<ObjectDetection> objectDetection = std::make_shared<ObjectDetection>();
 

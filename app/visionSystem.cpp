@@ -1,5 +1,18 @@
+/**
+* @file visionSystem.cpp
+* @brief VisionSystem Class implementation
+* @details Implementation of the VisionSystem class to determine suggested actions based on images and depth measurements
+* @author Patrick Nolan (patnolan33)
+* @copyright MIT License.
+*/
+
 #include <visionSystem.hpp>
 
+/**
+ * @brief VisionSystem constructor
+ * @param maxDetectionDistance Maximum detection distance of the onboard lasers
+ * @param vehicleCrossSection Vehicle forward cross section to determine if it can fit into any empty spaces found
+ */
 VisionSystem::VisionSystem(double maxDetectionDistance, double vehicleCrossSection)
 : vehicleCrossSection(vehicleCrossSection) {
 	camera = std::make_shared<Camera>();
@@ -7,6 +20,10 @@ VisionSystem::VisionSystem(double maxDetectionDistance, double vehicleCrossSecti
 	rightLaser = std::make_shared<LaserRangeFinder>(maxDetectionDistance + 0.2);
 }
 
+/**
+ * @brief Determine the control action based on images and depth measurements
+ * @return string denoting the suggested action (i.e. turn right/left 45 degrees, continue straight, no action)
+ */
 std::string VisionSystem::determineControlAction() {
 	// Take image with camera:
 	if(camera->takeImage()) {
@@ -55,10 +72,18 @@ std::string VisionSystem::determineControlAction() {
 	return suggestedAction;
 }
 
+/**
+ * @brief Get the current suggested action
+ * @return string denoting the suggested action (i.e. turn right/left 45 degrees, continue straight, no action)
+ */
 std::string VisionSystem::getSuggestedAction() {
 	return suggestedAction;
 }
 
+/**
+ * @brief Get the vehicle cross section
+ * @return vehicle forward cross section
+ */
 double VisionSystem::getVehicleCrossSection() {
 	return vehicleCrossSection;
 }

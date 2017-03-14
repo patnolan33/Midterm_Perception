@@ -1,3 +1,11 @@
+/**
+* @file objectDetection.cpp
+* @brief ObjectDetection Class implementation
+* @details Implementation of the ObjectDetection class to determine the boundary of any imaged object
+* @author Patrick Nolan (patnolan33)
+* @copyright MIT License.
+*/
+
 #include <objectDetection.hpp>
 
 #include <opencv2/imgproc/imgproc.hpp>
@@ -5,19 +13,36 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <iostream>
 
+/**
+ * @brief ObjectDetection constructor
+ */
 ObjectDetection::ObjectDetection() : objectArea(0) {
 	fixationPoint.x = 0;
 	fixationPoint.y = 0;
 }
 
+/**
+ * @brief Get the vector of pixel locations of the detected boundary
+ * @return vector of pixel locations
+ */
 std::vector<cv::Point> ObjectDetection::getBoundaryPixels() {
 	return boundaryPixels;
 }
 
+/**
+ * @brief Get the area of the detected object
+ * @return object area
+ */
 double ObjectDetection::getObjectArea() {
 	return objectArea;
 }
 
+/**
+ * @brief Detect the object boundary assuming a fixation point at the center of the image given by filename
+ * @param filename Image filename to read in and process
+ * @param displayImage True if you wish to display the processed image
+ * @return success or failure (true or false)
+ */
 bool ObjectDetection::detectObjectBoundary(const std::string filename, bool displayImage) {
 	// Define image processing constants:
 	int threshold = 100;
@@ -66,6 +91,11 @@ bool ObjectDetection::detectObjectBoundary(const std::string filename, bool disp
 	}
 }
 
+/**
+ * @brief Draw/Plot the image and process boundary
+ * @param boundary Vector of pixel locations denoting the boundary
+ * @param srcImg Image to display
+ */
 void ObjectDetection::drawBoundary(std::vector<cv::Point> boundary, cv::Mat srcImg) {
 
 	cv::RNG rng(12345);
