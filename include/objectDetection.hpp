@@ -26,4 +26,6 @@ private:
 
 	double objectArea;
 
+	cv::Point fixationPoint;
+
 };
