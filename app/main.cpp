@@ -1,5 +1,5 @@
 #include <iostream>
-#include <laserRangeFinder.hpp>
+#include <visionSystem.hpp>
 #include <memory>
 
 #include <opencv2/imgproc/imgproc.hpp>
@@ -15,11 +15,15 @@ int main()
 //	std::shared_ptr<Camera> camera = std::make_shared<Camera>();
 //
 //	camera->takeImage();
+//
+//
+//	std::shared_ptr<LaserRangeFinder> ranger = std::make_shared<LaserRangeFinder>(10);
+//
+//	ranger->takeDistanceReading();
 
+	std::shared_ptr<VisionSystem> visionSystem = std::make_shared<VisionSystem>(10, 0);
 
-	std::shared_ptr<LaserRangeFinder> ranger = std::make_shared<LaserRangeFinder>(10);
-
-	ranger->takeDistanceReading();
+	std::cout << "Suggested action: " << visionSystem->determineControlAction() << std::endl;
 
     return 0;
 }

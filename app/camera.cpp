@@ -40,3 +40,7 @@ bool Camera::takeImage() {
 std::vector<cv::Point> Camera::getBoundary() {
 	return boundaryDetection->getBoundaryPixels();
 }
+
+double Camera::getObjectArea() {
+	return boundaryDetection->getObjectArea();
+}

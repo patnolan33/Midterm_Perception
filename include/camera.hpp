@@ -21,6 +21,8 @@ public:
 
 	std::vector<cv::Point> getBoundary();
 
+	double getObjectArea();
+
 
 private:
 	cv::VideoCapture videoCapture;

@@ -15,8 +15,15 @@ TEST(ObjectDetectionTest, get_boundary) {
 	std::vector<cv::Point> boundaryPts =
 	  objectDetection->getBoundaryPixels();
 
-	// TODO: Change this length to the correct number of points when I get a test image working
 	EXPECT_EQ(10, boundaryPts.size());
+}
+
+TEST(ObjectDetectionTest, get_area) {
+	std::shared_ptr<ObjectDetection> objectDetection = std::make_shared<ObjectDetection>();
+	objectDetection->detectObjectBoundary(filename, false);
+
+	// Test image object has an area of 176042. Make sure to change if image is changed
+	EXPECT_NEAR(176042, objectDetection->getObjectArea(), 1);
 }
 
 TEST(ObjectDetectionTest, detect_boundary) {

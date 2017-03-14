@@ -10,19 +10,23 @@
 class VisionSystem {
 public:
 
-	VisionSystem(double maxDetectionDistance);
+	VisionSystem(double maxDetectionDistance, double vehicleCrossSection);
 
 	std::string determineControlAction();
 
 	std::string getSuggestedAction();
 
+	double getVehicleCrossSection();
+
 
 private:
-	Camera camera;
+	std::shared_ptr<Camera> camera;
 
 	std::shared_ptr<LaserRangeFinder> leftLaser;
 
 	std::shared_ptr<LaserRangeFinder> rightLaser;
 
 	std::string suggestedAction;
+
+	double vehicleCrossSection;
 };

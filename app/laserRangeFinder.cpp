@@ -4,8 +4,9 @@
 #include <time.h>
 
 LaserRangeFinder::LaserRangeFinder(double maxDetectionDistance)
-: maxDetectionDistance(maxDetectionDistance),
-  currentReading(maxDetectionDistance*10){
+: maxDetectionDistance(maxDetectionDistance) {
+	// Default currentReading to a large value over the maxDetectionDistance:
+	currentReading = maxDetectionDistance + 100;
 }
 
 void LaserRangeFinder::takeDistanceReading() {
@@ -17,7 +18,7 @@ void LaserRangeFinder::takeDistanceReading() {
 		currentReading = 4.5 + noise;
 	}
 	else {
-		currentReading = maxDetectionDistance*10;
+		currentReading = maxDetectionDistance + 100;
 	}
 }
 

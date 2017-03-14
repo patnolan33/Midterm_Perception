@@ -5,12 +5,16 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <iostream>
 
-ObjectDetection::ObjectDetection() {
+ObjectDetection::ObjectDetection() : objectArea(0) {
 
 }
 
 std::vector<cv::Point> ObjectDetection::getBoundaryPixels() {
 	return boundaryPixels;
+}
+
+double ObjectDetection::getObjectArea() {
+	return objectArea;
 }
 
 bool ObjectDetection::detectObjectBoundary(const std::string filename, bool displayImage) {
@@ -40,6 +44,9 @@ bool ObjectDetection::detectObjectBoundary(const std::string filename, bool disp
 	if(boundaryPixels.size() > 0) {
 		std::cout << "Found " << contours.size() << " contours." << std::endl;
 		std::cout << "Boundary pixels for the first contour: " << boundaryPixels.size() << std::endl;
+
+		// Set object area:
+		objectArea = cv::contourArea(boundaryPixels);
 
 		if(displayImage) {
 			drawBoundary(boundaryPixels, srcImg);

@@ -13,6 +13,8 @@ public:
 
 	std::vector<cv::Point> getBoundaryPixels();
 
+	double getObjectArea();
+
 	bool detectObjectBoundary(const std::string filename, bool displayImage);
 
 
@@ -21,5 +23,7 @@ private:
 	void drawBoundary(std::vector<cv::Point> boundary, cv::Mat cannyImg);
 
 	std::vector<cv::Point> boundaryPixels;
+
+	double objectArea;
 
 };

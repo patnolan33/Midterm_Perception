@@ -10,13 +10,9 @@ TEST(LaserRangeFinderTest, read_distance) {
 }
 
 TEST(LaserRangeFinderTest, get_distance) {
-	std::shared_ptr<LaserRangeFinder> laserRangeFinder = std::make_shared<LaserRangeFinder>(0);
+	std::shared_ptr<LaserRangeFinder> laserRangeFinder = std::make_shared<LaserRangeFinder>(0.1);
 
-	EXPECT_EQ(0, laserRangeFinder->getDistance());
-
-	laserRangeFinder->takeDistanceReading();
-
-	EXPECT_NE(0, laserRangeFinder->getDistance());
+	EXPECT_EQ(100.1, laserRangeFinder->getDistance());
 }
 
 TEST(LaserRangeFinderTest, get_max_distance) {
